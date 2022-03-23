@@ -25,14 +25,38 @@
         <section class="sec">
             <header>
                 <div class="toggle"></div>
-                <a href="#" class="btn">Hire Me</a>
             </header>
+
+            <div class="imgBx">
+                <img src="img/home.jpg" class="cover">
+            </div>
+            <div class="content" text-align: center>
+                <h2>Hi, I am<br>
+                    <span>Nuqutone</span>
+                </h2>
+                <p>Chukyo Uni Faculty of Engineering 4rd year
+                    Use language: C# html css JavaScript etc...
+                </p>
+            </div>
+
+            <footer>
+                <ul class="sci">
+                    <li><a href="#"><img src="img/GitHub.jpg" width="80" height="80"></a></li>
+                    <li><a href="#"><img src="img/Twitter.jpg" width="80" height="80"></a></li>
+                    <li><a href="#"><img src="img/email.jpg" width="80" height="80"></a></li>
+                </ul>
+                <p class="copyrightText">©️2021 nuqutone's Portfolio</p>
+            </footer>
         </section>
 
         <script>
             let menuToggle = document.querySelector('.toggle')
+            let navigation = document.querySelector('.navigation')
+            let sec = document.querySelector('.sec')
             menuToggle.onclick = function(){
                 menuToggle.classList.toggle('active')
+                navigation.classList.toggle('active')
+                sec.classList.toggle('active')
             }
         </script>
     </body>

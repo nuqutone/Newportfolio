@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.navigation
+{
+	position: fixed;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100vh;
+	display: flex;
+	background: #333;
+	justify-content: center;
+	transition: 1s;
+}
+
+.banner
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+}
+
+.cover
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.navLink ul
+{
+	position: relative;
+	width: 100%;
+}
+
+.navLink ul li
+{
+	position: relative;
+	list-style: none;
+}
+
+.navLink ul li a
+{
+	position: relative;
+	color: #fff;
+	font-size: 2em;
+	font-weight: 500;
+	text-decoration: none;
+	margin: 5px 0;
+	margin-left: 100px;
+	display: inline-block;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+
+.navLink ul li a:hover
+{
+	color: #2082f1;
+}
+
+.sec
+{
+	position: relative;
+}
+
+header
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 40px 100px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s;
+}
+
+.toggle
+{
+	position: relative;
+	left: 0;
+	width: 40px;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	transition: 0.5s;
+	background-color: #ccc;
+}
+
+.toggle::before
+{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 3px;
+	background: #777;
+	transform: translateY(-6px);
+	transition: 0.5s;
+}
+
+.toggle::after
+{
+	content: '';
+	position: absolute;
+	width: 30px;
+	height: 3px;
+	background: #777;
+	transform: translateY(6px);
+	transition: 0.5s;
+}

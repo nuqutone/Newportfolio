@@ -121,3 +121,13 @@ header
 	transform: translateY(6px);
 	transition: 0.5s;
 }
+
+.toggle.active::before
+{
+	transform: translateY(0px) rotate(45deg);
+}
+
+.toggle.active::after
+{
+	transform: translateY(0px) rotate(-45deg);
+}

@@ -3,23 +3,101 @@
     <head>
         <meta name="viewport" content="with=device-width, initial-scale=1.0">
         <meta charset="UTF-8">
-        <title>Responsive Personal Portfolio Page</title>
+        <title>Nuqutone's Portfolio</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="icon" href="img/icon/tab.png">
     </head>
     <body>
-        <div class="navigation">
+        <div class="navigation" id="blur">
             <div class="banner">
                 <img src="img/banner.jpg" class="cover">
             </div>
             <div class="navLink">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Work</a></li>
-                    <li><a href="#">Skill</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#" onclick="toggle(1)">About</a></li>
+                    <li><a href="#" onclick="toggle(2)">Work</a></li>
+                    <li><a href="#" onclick="toggle(3)">Skill</a></li>
+                    <li><a href="#" onclick="toggle(4)">Contact</a></li>
                 </ul>
             </div>
+        </div>
+
+        <div class="popup" id="pop_about">
+            <h3>ABOUT</h3>
+            <p>中京大学4年 Nuqutone です.<br>
+                主にゲーム開発を行っています.<br>
+                学業の傍ら自宅サーバーを用いたBot開発やサーバー管理を行っています.<br>
+                趣味で登山やスノーボードをしており、東海圏の山にシーズンを問わず出没します.<br>
+            </p>
+            <btn href="#" onclick="toggle()">Close</btn>
+        </div>
+        <div class="popup" id="pop_work">
+            <h3>WORK</h3>
+            <div class="video_box">
+                <video src="mp4/movie_1.mp4" autoplay loop muted  width="70%" height="70%"></video>
+                <video src="mp4/movie_2.mp4" autoplay loop muted  width="70%" height="70%"></video>
+            </div>
+            
+            <btn href="#" onclick="toggle()">Close</btn>
+        </div>
+        <div class="popup" id="pop_skill">
+            <h3>Skill</h3>
+            <div class="box">
+                <div class="skill_card">
+                    <h2>ゲーム開発</h2>
+                    <p>個人・チームでの開発経験があります</p>
+                    <ul>
+                        <li>Unity</li>
+                        <li>Blender</li>
+                    </ul>
+                </div>
+                <div class="skill_card">
+                    <h2>OS</h2>
+                    <p>自宅サーバーで使用しています</p>
+                    <ul>
+                        <li>Ubuntu</li>
+                        <li>Proxmox VE</li>
+                    </ul>
+                </div>
+                <div class="skill_card">
+                    <h2>フロントエンド</h2>
+                    <p>鋭意勉強中…</p>
+                    <ul>
+                        <li>CSS3</li>
+                        <li>HTML5</li>
+                        <li>JavaScript</li>
+                    </ul>
+                </div>
+                <div class="skill_card">
+                    <h2>JavaScript</h2>
+                    <p>Web・Bot開発で利用しています</p>
+                    <ul>
+                        <li>jQuery</li>
+                        <li>Node.js</li>
+                        <li>React</li>
+                    </ul>
+                </div>
+                <div class="skill_card">
+                    <h2>その他</h2>
+                    <p>開発に使用しています</p>
+                    <ul>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>Slack</li>
+                    </ul>
+                </div>
+            </div>
+
+            <btn href="#" onclick="toggle()">Close</btn>
+        </div>
+        <div class="popup" id="pop_contact">
+            <h3>CONTACT</h3>
+            <ul>
+                <li><a href="https://github.com/nuqutone"><img src="img/icon/GitHub.jpg" width="80" height="80"></a><p>GitHub<br>nuqutone</p></li>
+                <li><a href="#"><img src="img/icon/Twitter.jpg" width="80" height="80"></a><p>Twitter<br>NULL</p></li>
+                <li><a href="mailto:nuquto@gmail.com"><img src="img/icon/email.jpg" width="80" height="80"></a><p>Email<br>nuqutone@gmail.com</p></li>
+            </ul>
+            <btn href="#" onclick="toggle()">Close</btn>
         </div>
 
         <section class="sec">
@@ -34,8 +112,9 @@
                 <h2>Hi, I am<br>
                     <span>Nuqutone</span>
                 </h2>
-                <p>Chukyo Uni Faculty of Engineering 4rd year
-                    Use language: C# html css JavaScript etc...
+                <p>
+                    Chukyo Uni Faculty of Engineering 4rd year.
+                    I love mountain climbing.
                 </p>
             </div>
 
@@ -43,6 +122,7 @@
                 <ul class="sci">
                     <li><a href="https://github.com/nuqutone"><img src="img/icon/GitHub.jpg" width="80" height="80"></a></li>
                     <li><a href="#"><img src="img/icon/Twitter.jpg" width="80" height="80"></a></li>
+                    <li><a href="mailto:nuquto@gmail.com"><img src="img/icon/email.jpg" width="80" height="80"></a></li>
                 </ul>
                 <p class="copyrightText">©️2021 nuqutone</p>
             </footer>
@@ -56,6 +136,43 @@
                 menuToggle.classList.toggle('active')
                 navigation.classList.toggle('active')
                 sec.classList.toggle('active')
+                blur.classList.remove('blur')
+                pop_about.classList.remove('active')
+                pop_work.classList.remove('active')
+                pop_skill.classList.remove('active')
+                pop_contact.classList.remove('active')
+            }
+            
+            let blur =document.getElementById('blur')
+            let pop_about =document.getElementById('pop_about')
+            let pop_work =document.getElementById('pop_work')
+            let pop_skill =document.getElementById('pop_skill')
+            let pop_contact =document.getElementById('pop_contact')
+            function toggle(m)
+            {
+                pop_about.classList.remove('active')
+                pop_work.classList.remove('active')
+                pop_skill.classList.remove('active')
+                pop_contact.classList.remove('active')
+                blur.classList.toggle('blur')
+                switch(m)
+                {
+                    case 1:
+                        pop_about.classList.toggle('active')
+                        break;
+                    case 2:
+                        pop_work.classList.toggle('active')
+                        break;
+                    case 3:
+                        pop_skill.classList.toggle('active')
+                        break;
+                    case 4:
+                        pop_contact.classList.toggle('active')
+                        break;
+                    default:
+                        break;
+                }
+                
             }
         </script>
     </body>
